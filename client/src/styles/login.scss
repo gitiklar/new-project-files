@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px) brightness(0.8);
 
     .form {
       width: 50vw;
