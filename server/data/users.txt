@@ -1,0 +1,24 @@
+
+    <users>
+        <user>
+            <id>1</id>
+            <email>gila@gmail.com</email>
+            <firstName>Gila</firstName>
+            <lastName>Levi</lastName>
+            <password>$2b$10$NMltSGNHy9rZfjuZHWyi7e0hQhT1OEk1aYJALAt0Qtcvhwb3Odh/q</password>
+        </user>
+        <user>
+            <id>2</id>
+            <email>batya@gmail.com</email>
+            <firstName>Batya</firstName>
+            <lastName>Cohen</lastName>
+            <password>$2b$10$3XeIamyGZDJxe8SbwQUcSeDGJp7FTZFGLWvTKBAm/b6wVw4GeOHTO</password>
+        </user>
+        <user>
+            <id>3</id>
+            <email>gitiklar@gmail.com</email>
+            <firstName>Gita</firstName>
+            <lastName>Klar</lastName>
+            <password>$2b$10$V34mneGUNnTh3yPaxrpT/ex3K187bQODtRmBlQfSAUpazngOUJV/.</password>
+        </user>
+    </users>
