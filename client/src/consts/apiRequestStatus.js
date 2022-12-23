@@ -1,0 +1,6 @@
+export default {
+  INIT: 'INIT',
+  PENDING: 'PENDING',
+  SUCCESSFULLY: 'SUCCESSFULLY',
+  FAILED: 'FAILED',
+};

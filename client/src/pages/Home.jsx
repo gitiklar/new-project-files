@@ -1,13 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 
+import { getLoggedInUser } from "../redux/auth/selectors";
 import logoImg from "../styles/images/logo.jpg";
 
 export default () => {
+  const loggedInUser = useSelector(getLoggedInUser);
 
-  const logOutHandler = () => {
-
-  };
+  const logOutHandler = () => {};
 
   return (
     <div className="home-page">
@@ -16,7 +17,11 @@ export default () => {
           <img src={logoImg} alt="logo" />
         </NavLink>
         <div className="userContainer">
-          <div className="divHello">{`Hello ${"username" || ""}`}</div>
+          <div className="divHello">{`Hello ${
+            loggedInUser
+              ? loggedInUser.firstName + " " + loggedInUser.lastName
+              : "guest"
+          }`}</div>
           <NavLink onClick={logOutHandler}>logout</NavLink>
         </div>
       </header>

@@ -1,12 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Button, Form, Input } from "antd";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Form, Input, message } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
 
 import { isPasswordCorrect } from "../utils/passwordValidation";
+import { login } from "../redux/auth/actions";
+import useIndicationMessage from "../customHooks/useIndicationMessage";
+import { getLoginStatus } from "../redux/auth/selectors";
+import ApiRequestStatus from "../consts/apiRequestStatus";
 
 const Login = () => {
-  const onLogin = (loginFormData) => {};
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  useIndicationMessage();
+  const loginStatus = useSelector(getLoginStatus);
+
+  useEffect(() => {
+    if (loginStatus !== ApiRequestStatus.SUCCESSFULLY) return;
+    navigate("/home");
+  }, [loginStatus]);
+
+  const onLogin = async (loginFormData) => {
+    message.loading({ content: "checking...", key: "updatable" });
+    dispatch(login(loginFormData));
+  };
 
   return (
     <div className="loginContainer">
@@ -53,10 +71,7 @@ const Login = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Link
-              to={{ pathname: "/register" }}
-              className="register colorWhite"
-            >
+            <Link to="/register" className="register colorWhite">
               Or register now!
             </Link>
           </Form.Item>

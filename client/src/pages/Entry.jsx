@@ -1,10 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { SmileOutlined } from "@ant-design/icons";
+import { useSelector } from "react-redux";
 
 import logoImg from "../styles/images/logo.jpg";
+import { getLoginStatus } from "../redux/auth/selectors";
+import ApiRequestStatus from "../consts/apiRequestStatus";
 
 export default () => {
+  const loginStatus = useSelector(getLoginStatus);
+
   return (
     <div className="entry">
       <header className="header">
@@ -12,7 +17,7 @@ export default () => {
           <img src={logoImg} alt="logo" />
         </NavLink>
         <h1>Our new website</h1>
-        {false ? (
+        {loginStatus === ApiRequestStatus.SUCCESSFULLY ? (
           <NavLink to="/home" className="entry-nav">
             <u>entry</u>
           </NavLink>
