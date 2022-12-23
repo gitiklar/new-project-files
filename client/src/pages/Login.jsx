@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Form, Input, message } from "antd";
+import { Button, Form, Input } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 
@@ -10,10 +10,10 @@ import useIndicationMessage from "../customHooks/useIndicationMessage";
 
 const Login = () => {
   const dispatch = useDispatch();
-  useIndicationMessage();
+  const { loadingMessage } = useIndicationMessage();
 
   const onLogin = async (loginFormData) => {
-    message.loading({ content: "checking...", key: "updatable" });
+    loadingMessage();
     dispatch(login(loginFormData));
   };
 

@@ -1,19 +1,18 @@
 import React, { useEffect } from "react";
-import { message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 
 import { getLoggedInUser } from "../redux/auth/selectors";
 import logoImg from "../styles/images/logo.jpg";
-import { getIndicationMessage } from "../redux/messages/selectors";
 import { logout } from "../redux/auth/actions";
+import useIndicationMessage from "../customHooks/useIndicationMessage";
 
 export default () => {
   const loggedInUser = useSelector(getLoggedInUser);
-  const indicationMessage = useSelector(getIndicationMessage);
+  const { destoryMessage } = useIndicationMessage();
   const dispatch = useDispatch();
 
-  useEffect(() => message.destroy(indicationMessage.key), []);
+  useEffect(() => destoryMessage(), []);
 
   const logOutHandler = () => {
     dispatch(logout());
