@@ -37,6 +37,10 @@ class UserService {
   findUserByEmail(email) {
     return this.users.find((user) => user.email === email);
   }
+
+  findUserByUserId(userId) {
+    return this.users.find((user) => user.id === userId);
+  }
 }
 
 const userService = new UserService();

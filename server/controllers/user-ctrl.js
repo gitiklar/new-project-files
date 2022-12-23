@@ -30,7 +30,6 @@ const login = async (req, res) => {
         type: "error",
         message: "user not found",
       });
-
     } else {
       const validPassword = await validatePassword(password, user.password);
       if (!validPassword) {
@@ -42,7 +41,7 @@ const login = async (req, res) => {
       }
     }
 
-    const accessToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+    const accessToken = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
       expiresIn: "10H",
     });
 
@@ -56,6 +55,12 @@ const login = async (req, res) => {
   }
 };
 
+const getUser = (req, res) => {
+  const user = req.user;
+  res.status(200).json({ status: 200, user });
+};
+
 module.exports = {
   login,
+  getUser,
 };

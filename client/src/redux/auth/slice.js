@@ -16,6 +16,12 @@ const slice = createSlice({
       state.loginStatus = ApiRequestStatus.SUCCESSFULLY;
       state.user = response.user;
     },
+    ["auth/getUserIfTheTokenHasNotExpired/fulfilled"]: (state, action) => {
+      const response = action.payload;
+      if (response.status !== 200) return;
+      state.loginStatus = ApiRequestStatus.SUCCESSFULLY;
+      state.user = response.user;
+    },
   },
 });
 
