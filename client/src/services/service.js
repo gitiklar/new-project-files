@@ -1,6 +1,8 @@
+import LocalStorageService from "./LocalStorageService";
+
 const serverUrl = "http://localhost:3001/api";
 
-const getToken = () => localStorage.getItem("accessToken") || "";
+const getToken = () => LocalStorageService.get("accessToken");
 
 const doFetch = async (url, method, sendToken, body = null) => {
   const options = {

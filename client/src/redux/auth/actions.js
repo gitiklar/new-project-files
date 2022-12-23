@@ -1,8 +1,9 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 import { getRequest, postRequest } from "../../services/service";
 import { clearMessage } from "../messages/actions";
 import SendAccessToken from "../../consts/sendAccessToken";
+import LocalStorageService from "../../services/LocalStorageService";
 
 export const login = createAsyncThunk(
   "auth/login",
@@ -13,7 +14,7 @@ export const login = createAsyncThunk(
         SendAccessToken.NO,
         loginUserFormData
       );
-      localStorage.setItem("accessToken", response.accessToken);
+      LocalStorageService.set("accessToken", response.accessToken);
       setTimeout(() => dispatch(clearMessage()));
       return response;
     } catch (err) {
@@ -21,6 +22,8 @@ export const login = createAsyncThunk(
     }
   }
 );
+
+export const logout = createAction("auth/logout");
 
 export const getUserIfTheTokenHasNotExpired = createAsyncThunk(
   "auth/getUserIfTheTokenHasNotExpired",

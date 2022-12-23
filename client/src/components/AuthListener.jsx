@@ -17,6 +17,9 @@ export default () => {
       case ApiRequestStatus.INIT:
         customNavigate.navigateToLoginPage();
         break;
+      case ApiRequestStatus.FAILED:
+        customNavigate.navigateToLoginPage();
+        break;
     }
   }, [loginStatus]);
   return <></>;

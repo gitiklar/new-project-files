@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+
+import { logout } from "../auth/actions";
 import { clearMessage } from "./actions";
 
 const initialState = {
@@ -24,6 +26,9 @@ const slice = createSlice({
     [clearMessage]: (state) => {
       state.type = "";
       state.message = "";
+    },
+    [logout]: () => {
+      return initialState;
     },
   },
 });

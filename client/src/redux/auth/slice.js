@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import ApiRequestStatus from "../../consts/apiRequestStatus";
+import LocalStorageService from "../../services/LocalStorageService";
+import { logout } from "./actions";
 
 const initialState = {
   loginStatus: ApiRequestStatus.INIT,
@@ -21,6 +23,10 @@ const slice = createSlice({
       if (response.status !== 200) return;
       state.loginStatus = ApiRequestStatus.SUCCESSFULLY;
       state.user = response.user;
+    },
+    [logout]: () => {
+      LocalStorageService.remove("accessToken")
+      return initialState;
     },
   },
 });
