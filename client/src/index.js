@@ -5,12 +5,14 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 import store from "./redux/store";
+import AuthListener from "./components/AuthListener";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
       <React.StrictMode>
+        <AuthListener />
         <App />
       </React.StrictMode>
     </Provider>

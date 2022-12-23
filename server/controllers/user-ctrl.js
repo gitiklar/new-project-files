@@ -16,7 +16,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!isEmailCorrect(email) || !isPasswordCorrect(password)) {
-      res.status(401).json({
+      return res.status(401).json({
         status: 401,
         type: "error",
         message: "invalid email or password",
@@ -25,7 +25,7 @@ const login = async (req, res) => {
 
     const user = userService.findUserByEmail(email);
     if (!user) {
-      res.status(401).json({
+      return res.status(401).json({
         status: 401,
         type: "error",
         message: "user not found",
@@ -33,7 +33,7 @@ const login = async (req, res) => {
     } else {
       const validPassword = await validatePassword(password, user.password);
       if (!validPassword) {
-        res.status(401).json({
+        return res.status(401).json({
           status: 401,
           type: "error",
           message: "password is incorrect",
@@ -45,9 +45,9 @@ const login = async (req, res) => {
       expiresIn: "10H",
     });
 
-    res.status(200).json({ status: 200, user, accessToken });
+    return res.status(200).json({ status: 200, user, accessToken });
   } catch (err) {
-    res.status(400).json({
+    return res.status(400).json({
       status: 400,
       type: "error",
       message: `Oops, an error occurred  : ${err.message}`,

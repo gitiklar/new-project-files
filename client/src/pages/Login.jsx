@@ -1,25 +1,16 @@
-import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Form, Input, message } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { isPasswordCorrect } from "../utils/passwordValidation";
 import { login } from "../redux/auth/actions";
 import useIndicationMessage from "../customHooks/useIndicationMessage";
-import { getLoginStatus } from "../redux/auth/selectors";
-import ApiRequestStatus from "../consts/apiRequestStatus";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   useIndicationMessage();
-  const loginStatus = useSelector(getLoginStatus);
-
-  useEffect(() => {
-    if (loginStatus !== ApiRequestStatus.SUCCESSFULLY) return;
-    navigate("/home");
-  }, [loginStatus]);
 
   const onLogin = async (loginFormData) => {
     message.loading({ content: "checking...", key: "updatable" });
