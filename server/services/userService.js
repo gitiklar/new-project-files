@@ -5,7 +5,8 @@ const parser = new xml2js.Parser({ explicitArray: false });
 
 class UserService {
   constructor() {
-    this.fillUsers();
+    // this.fillUsers();
+    this.users = [];
   }
 
   async fillUsers() {
@@ -34,11 +35,13 @@ class UserService {
     });
   }
 
-  findUserByEmail(email) {
+  async findUserByEmail(email) {
+    await this.fillUsers();
     return this.users.find((user) => user.email === email);
   }
 
-  findUserByUserId(userId) {
+  async findUserByUserId(userId) {
+    await this.fillUsers();
     return this.users.find((user) => user.id === userId);
   }
 }

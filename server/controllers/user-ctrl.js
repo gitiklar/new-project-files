@@ -23,7 +23,7 @@ const login = async (req, res) => {
       });
     }
 
-    const user = userService.findUserByEmail(email);
+    const user = await userService.findUserByEmail(email);
     if (!user) {
       return res.status(401).json({
         status: 401,

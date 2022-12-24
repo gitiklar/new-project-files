@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<customer>
+<customers>
     <customer>
         <id>1</id>
         <userId>1</userId>
@@ -130,4 +130,4 @@
         <phone>0548455568</phone>
         <bankAccount>5454545454545</bankAccount>
     </customer>
-</customer>
+</customers>

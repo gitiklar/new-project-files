@@ -17,7 +17,7 @@ const checkAccessToken = async (req, res, next) => {
         message: "Your session expired Please login again",
       });
     }
-    req.user = userService.findUserByUserId(userId);
+    req.user = await userService.findUserByUserId(userId);
     next();
   } catch (err) {
     return res.status(401).json({
