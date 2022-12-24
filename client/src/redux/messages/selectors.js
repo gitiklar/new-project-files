@@ -1,3 +1,1 @@
-export const getIndicationMessage = (state) => {
-  return state.indicationMessage;
-};
+export const getIndicationMessage = (state) =>  state.indicationMessage;

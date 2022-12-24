@@ -36,6 +36,7 @@ export default () => {
       <div className="heading">
         <div className="menuLine">
           <NavLink to="/">Back to entry</NavLink>
+          <NavLink to="customers">Customers</NavLink>
         </div>
       </div>
       <div className="main">

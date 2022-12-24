@@ -8,11 +8,11 @@ const useCustomNavigate = () => {
   };
 
   const navigateToLoginPage = () => redirectToPath("/login");
-  const navigateToHomePage = () => redirectToPath("/home");
+  const navigateToCustomersPage = () => redirectToPath("/home/customers");
 
   return {
     navigateToLoginPage,
-    navigateToHomePage,
+    navigateToCustomersPage,
   };
 };
 

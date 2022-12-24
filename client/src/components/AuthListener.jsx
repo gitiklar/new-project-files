@@ -12,7 +12,7 @@ export default () => {
   useEffect(() => {
     switch (loginStatus) {
       case ApiRequestStatus.SUCCESSFULLY:
-        customNavigate.navigateToHomePage();
+        customNavigate.navigateToCustomersPage();
         break;
       case ApiRequestStatus.INIT:
         customNavigate.navigateToLoginPage();
