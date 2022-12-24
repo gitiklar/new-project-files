@@ -130,4 +130,37 @@
         <phone>0548455568</phone>
         <bankAccount>5454545454545</bankAccount>
     </customer>
+        </customer>
+        <customer>
+        <id>14</id>
+        <userId>1</userId>
+        <email>wwwwwww@gmail.com</email>
+        <firstName>wwwwwwww</firstName>
+        <lastName>wwwwww</lastName>
+        <date>10/01/2022</date>
+        <phone>0548445568</phone>
+        <bankAccount>5454545454545</bankAccount>
+    </customer>
+        </customer>
+        <customer>
+        <id>15</id>
+        <userId>1</userId>
+        <email>xxxxxx@gmail.com</email>
+        <firstName>xxxxx</firstName>
+        <lastName>xxxxx</lastName>
+        <date>10/01/2022</date>
+        <phone>0548425568</phone>
+        <bankAccount>5454545454545</bankAccount>
+    </customer>
+        </customer>
+        <customer>
+        <id>16</id>
+        <userId>1</userId>
+        <email>yyyyyy@gmail.com</email>
+        <firstName>yyyyy</firstName>
+        <lastName>yyyyyy</lastName>
+        <date>10/01/2022</date>
+        <phone>0548443678</phone>
+        <bankAccount>5454545454545</bankAccount>
+    </customer>
 </customers>
