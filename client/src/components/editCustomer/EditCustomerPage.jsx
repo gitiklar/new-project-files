@@ -1,33 +1,34 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button, DatePicker, Form, Input, InputNumber } from "antd";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 import dayjs from "dayjs";
 
 import { getCustomerById } from "../../redux/customers/selectors";
-
-const formItemLayout = {
-  labelCol: {
-    sm: {
-      span: 10,
-    },
-  },
-};
+import { editCustomer } from "../../redux/customers/actions";
 
 export default () => {
   const [form] = Form.useForm();
   const { id } = useParams();
   const customer = useSelector(getCustomerById(id));
+  const dispatch = useDispatch();
   const dateFormat = "DD/MM/YYYY";
 
   const onFinish = (values) => {
-    console.log(moment(new Date(values.date)).format(dateFormat));
+    dispatch(editCustomer({
+      ...values,
+      date: moment(new Date(values.date)).format(dateFormat),
+    }));
   };
 
   return (
     <Form
-      {...formItemLayout}
+      labelCol={{
+        sm: {
+          span: 10,
+        },
+      }}
       form={form}
       name="edit"
       onFinish={onFinish}

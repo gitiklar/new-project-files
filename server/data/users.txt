@@ -1,5 +1,5 @@
 
-    <users>
+    <user>
         <user>
             <id>1</id>
             <email>gila@gmail.com</email>
@@ -21,4 +21,4 @@
             <lastName>Klar</lastName>
             <password>$2b$10$V34mneGUNnTh3yPaxrpT/ex3K187bQODtRmBlQfSAUpazngOUJV/.</password>
         </user>
-    </users>
+    </user>

@@ -7,6 +7,7 @@ class UserService {
   constructor() {
     // this.fillUsers();
     this.users = [];
+    this.usersPath = "../data/users.txt";
   }
 
   async fillUsers() {
@@ -20,13 +21,10 @@ class UserService {
 
   getUsersFromFile() {
     return new Promise((resolve, reject) => {
-      const xml = fs.readFileSync(
-        path.join(__dirname, "../data/users.txt"),
-        "utf8"
-      );
+      const xml = fs.readFileSync(path.join(__dirname, this.usersPath), "utf8");
       parser.parseString(xml, (error, data) => {
         if (error === null) {
-          const users = data?.users?.user;
+          const users = data?.user?.user;
           resolve(users);
         } else {
           reject(error);

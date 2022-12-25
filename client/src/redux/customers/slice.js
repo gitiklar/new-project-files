@@ -14,6 +14,11 @@ const slice = createSlice({
       if (response.status !== 200) return;
       state.customers = response.customers;
     },
+    ["customers/editCustomer/fulfilled"]: (state, action) => {
+      const response = action.payload;
+      if (response.status !== 200) return;
+      state.customers = response.newCustomers;
+    },
     [logout]: () => {
       return initialState;
     },

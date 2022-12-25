@@ -19,6 +19,21 @@ const getCustomersOfUser = async (req, res) => {
   }
 };
 
+const editCustomer = async (req, res) => {
+  try {
+    const customer = req.body;
+    const newCustomers = await customersService.updateCustomer(customer);
+    res.status(200).json({ status: 200, newCustomers });
+  } catch (err) {
+    res.status(400).json({
+      status: 400,
+      type: "error",
+      message: `Oops, an error occurred  : ${err.message}`,
+    });
+  }
+};
+
 module.exports = {
   getCustomersOfUser,
+  editCustomer,
 };
