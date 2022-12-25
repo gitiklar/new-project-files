@@ -30,7 +30,7 @@
         <phone>0548444444</phone>
         <bankAccount>33333333333333</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>4</id>
         <userId>2</userId>
         <email>dddd@gmail.com</email>
@@ -40,7 +40,7 @@
         <phone>0548111111</phone>
         <bankAccount>4444444444444</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>5</id>
         <userId>3</userId>
         <email>eeeeee@gmail.com</email>
@@ -50,7 +50,7 @@
         <phone>0548666666</phone>
         <bankAccount>555555555555</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>6</id>
         <userId>3</userId>
         <email>fffff@gmail.com</email>
@@ -60,7 +60,7 @@
         <phone>0548999999</phone>
         <bankAccount>66666666666</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>7</id>
         <userId>1</userId>
         <email>ccccc@gmail.com</email>
@@ -70,7 +70,7 @@
         <phone>0548565656</phone>
         <bankAccount>77777777777777</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>8</id>
         <userId>1</userId>
         <email>ggggg@gmail.com</email>
@@ -80,7 +80,7 @@
         <phone>0548343434</phone>
         <bankAccount>8888888888888</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>9</id>
         <userId>1</userId>
         <email>hhhhh@gmail.com</email>
@@ -90,7 +90,7 @@
         <phone>0548124567</phone>
         <bankAccount>99999999999</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>10</id>
         <userId>2</userId>
         <email>kkkkkk@gmail.com</email>
@@ -100,7 +100,7 @@
         <phone>0548989898</phone>
         <bankAccount>10101011010</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>11</id>
         <userId>2</userId>
         <email>lllll@gmail.com</email>
@@ -110,7 +110,7 @@
         <phone>0548577777</phone>
         <bankAccount>2323232323232</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>12</id>
         <userId>3</userId>
         <email>pppppp@gmail.com</email>
@@ -120,7 +120,7 @@
         <phone>0548456666</phone>
         <bankAccount>3434343434343</bankAccount>
     </customer>
-        <customer>
+    <customer>
         <id>13</id>
         <userId>2</userId>
         <email>rrrrrr@gmail.com</email>
@@ -130,8 +130,7 @@
         <phone>0548455568</phone>
         <bankAccount>5454545454545</bankAccount>
     </customer>
-        </customer>
-        <customer>
+    <customer>
         <id>14</id>
         <userId>1</userId>
         <email>wwwwwww@gmail.com</email>
@@ -141,8 +140,7 @@
         <phone>0548445568</phone>
         <bankAccount>5454545454545</bankAccount>
     </customer>
-        </customer>
-        <customer>
+    <customer>
         <id>15</id>
         <userId>1</userId>
         <email>xxxxxx@gmail.com</email>
@@ -152,8 +150,7 @@
         <phone>0548425568</phone>
         <bankAccount>5454545454545</bankAccount>
     </customer>
-        </customer>
-        <customer>
+    <customer>
         <id>16</id>
         <userId>1</userId>
         <email>yyyyyy@gmail.com</email>

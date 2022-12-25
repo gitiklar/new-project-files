@@ -6,3 +6,8 @@ export const getCustomersArray = createSelector(
   getCustomers,
   (customers) => customers.customers
 );
+
+export const getCustomerById = (id) =>
+  createSelector(getCustomersArray, (customersArray) =>
+    customersArray.find((customer) => customer.id === id)
+  );

@@ -9,10 +9,12 @@ const useCustomNavigate = () => {
 
   const navigateToLoginPage = () => redirectToPath("/login");
   const navigateToCustomersPage = () => redirectToPath("/home/customers");
+  const navigateToEditCustomerPage = (id) => redirectToPath(`/home/edit/${id}`);
 
   return {
     navigateToLoginPage,
     navigateToCustomersPage,
+    navigateToEditCustomerPage
   };
 };
 

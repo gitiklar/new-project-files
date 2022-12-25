@@ -4,9 +4,11 @@ import { Table, Input } from "antd";
 
 import { loadCustomers } from "../../redux/customers/actions";
 import { getCustomersArray } from "../../redux/customers/selectors";
+import useCustomNavigate from "../../customHooks/useCustomNavigate";
 
 export default () => {
   const customers = useSelector(getCustomersArray);
+  const customNavigate = useCustomNavigate();
   const [visibleCustomers, setVisibleCustomers] = useState([]);
   const [filterTable, setFilterTable] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -45,6 +47,10 @@ export default () => {
     setFilterTable(filterTable);
   };
 
+  const onRowClick = ({ id }) => {
+    customNavigate.navigateToEditCustomerPage(id);
+  };
+
   return (
     <div>
       <Input.Search
@@ -59,6 +65,9 @@ export default () => {
           columns={columns}
           dataSource={filterTable}
           pagination={{ pageSize: 5 }}
+          onRow={(record) => ({
+            onClick: () => onRowClick(record),
+          })}
         />
       )}
     </div>
