@@ -18,7 +18,7 @@ export default () => {
         </NavLink>
         <h1>Our new website</h1>
         {loginStatus === ApiRequestStatus.SUCCESSFULLY ? (
-          <NavLink to="/home" className="entry-nav">
+          <NavLink to="/bank" className="entry-nav">
             <u>entry</u>
           </NavLink>
         ) : (

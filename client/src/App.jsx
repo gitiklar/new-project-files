@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
 import Entry from "./pages/Entry";
-import Home from "./pages/Home";
+import Bank from "./pages/Bank";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CustomersTable from "./components/customersTable/CustomersTablePage";
@@ -22,7 +22,7 @@ export default () => {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/home" element={<Home />}>
+      <Route path="/bank" element={<Bank />}>
         <Route index element={<div>Choose tab</div>} />
         <Route path="customers" element={<CustomersTable />} />
         <Route path="edit/:id" element={<EditCustomer />} />

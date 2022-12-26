@@ -16,10 +16,12 @@ export default () => {
   const dateFormat = "DD/MM/YYYY";
 
   const onFinish = (values) => {
-    dispatch(editCustomer({
-      ...values,
-      date: moment(new Date(values.date)).format(dateFormat),
-    }));
+    dispatch(
+      editCustomer({
+        ...values,
+        date: moment(new Date(values.date)).format(dateFormat),
+      })
+    );
   };
 
   return (

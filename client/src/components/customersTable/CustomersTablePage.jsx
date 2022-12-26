@@ -9,6 +9,7 @@ import useCustomNavigate from "../../customHooks/useCustomNavigate";
 export default () => {
   const customers = useSelector(getCustomersArray);
   const customNavigate = useCustomNavigate();
+  const [searchVal, setSearchVal] = useState("");
   const [visibleCustomers, setVisibleCustomers] = useState([]);
   const [filterTable, setFilterTable] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -20,7 +21,7 @@ export default () => {
 
   useEffect(() => {
     if (!customers.length) return;
-    if (!filterTable.length) setFilterTable(customers);
+    if (!searchVal) setFilterTable(customers);
     if (!columns.length) updateColumns();
     setVisibleCustomers(customers);
   }, [customers]);
@@ -57,6 +58,8 @@ export default () => {
         placeholder="Search by..."
         enterButton
         onSearch={search}
+        value={searchVal}
+        onChange={(e) => setSearchVal(e.target.value)}
         onKeyUp={(e) => search(e.target.value)}
       />
       {customers.length && (
